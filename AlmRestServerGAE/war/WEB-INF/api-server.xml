@@ -1,0 +1,51 @@
+<beans xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemalocation="  
+        http://www.springframework.org/schema/beans   
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+        http://www.springframework.org/schema/context   
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<context:component-scan base-package="es.home.rsgae" />
+<!-- 
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<ref bean="jsonHttpMessageConverter">
+				</ref>
+			</list>
+		</property>
+	</bean>
+
+	<bean
+		class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"
+		id="jsonHttpMessageConverter">
+		<bean
+			class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+			<property name="mediaTypes">
+				<map>
+					<entry key="json" value="application/json"></entry>
+				</map>
+			</property>
+			<property name="defaultContentType" value="application/json">
+				<property name="defaultViews">
+					<list>
+						<bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView"></bean>
+					</list>
+				</property>
+			</property>
+		</bean>
+	</bean>
+	-->
+	
+	<!-- org.dozer.DozerBeanMapper -->
+	<bean id="mapper" class="org.dozer.Mapper">
+		<property name="mappingFiles">
+			<list>
+				<value>dozer-bean-mappings.xml</value>
+			</list>
+		</property>
+	</bean>
+</beans>  
