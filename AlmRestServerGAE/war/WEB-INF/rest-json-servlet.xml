@@ -42,5 +42,14 @@
 			</list>
 		</property>
 	</bean>
+	
+	<!-- org.dozer.DozerBeanMapper -->
+	<bean id="mapper" class="org.dozer.DozerBeanMapper">
+		<property name="mappingFiles">
+			<list>
+				<value>dozer-bean-mappings.xml</value>
+			</list>
+		</property>
+	</bean>
 
 </beans>
