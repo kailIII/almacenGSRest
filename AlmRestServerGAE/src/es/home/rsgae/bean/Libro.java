@@ -8,7 +8,6 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
-
 @PersistenceCapable(identityType = IdentityType.APPLICATION)
 public class Libro implements Serializable {
 
@@ -24,6 +23,10 @@ public class Libro implements Serializable {
 	@Persistent
 	private String argumento;
 	@Persistent
+	private String serie;
+	@Persistent
+	private String volumen;
+	@Persistent
 	private String paginas;
 
 	public Libro() {
@@ -31,14 +34,32 @@ public class Libro implements Serializable {
 		// TODO Auto-generated constructor stubd
 	}
 
-	public Libro(final Long ident, final String nombre, final String autor, final String argumento,
-			final String paginas) {
+	public Libro(Long ident, String nombre, String autor, String argumento,
+			String serie, String volumen, String paginas) {
 		super();
 		this.ident = ident;
 		this.nombre = nombre;
 		this.autor = autor;
 		this.argumento = argumento;
+		this.serie = serie;
+		this.volumen = volumen;
 		this.paginas = paginas;
+	}
+
+	public String getSerie() {
+		return serie;
+	}
+
+	public void setSerie(String serie) {
+		this.serie = serie;
+	}
+
+	public String getVolumen() {
+		return volumen;
+	}
+
+	public void setVolumen(String volumen) {
+		this.volumen = volumen;
 	}
 
 	public String getArgumento() {

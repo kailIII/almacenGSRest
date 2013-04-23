@@ -21,20 +21,42 @@ public class LibroJson implements Serializable {
 	private String argumento;
 	@JsonProperty(value = "paginas")
 	private String paginas;
+	@JsonProperty(value = "serie")
+	private String serie;
+	@JsonProperty(value = "volumen")
+	private String volumen;
 
 	public LibroJson() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public LibroJson(final Long id, final String nombre, final String autor,
-			final String argumento, final String paginas) {
+	public LibroJson(Long id, String nombre, String autor, String argumento,
+			String paginas, String serie, String volumen) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.autor = autor;
 		this.argumento = argumento;
 		this.paginas = paginas;
+		this.serie = serie;
+		this.volumen = volumen;
+	}
+
+	public String getSerie() {
+		return serie;
+	}
+
+	public void setSerie(String serie) {
+		this.serie = serie;
+	}
+
+	public String getVolumen() {
+		return volumen;
+	}
+
+	public void setVolumen(String volumen) {
+		this.volumen = volumen;
 	}
 
 	public String getArgumento() {
